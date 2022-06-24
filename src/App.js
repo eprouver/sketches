@@ -19,7 +19,9 @@ const App = () => {
     sketch.characters = ["❓", "❓", "❓"];
     sketch.plotLine = _.sample(plots);
     sketch.acts = [pickCard(), pickCard(), pickCard()];
-    sketch.frames = [];
+    sketch.frames = [...Array(1)].map(() => ({
+      diag: [{ char: "", text: "", emotion: "" }],
+    }));
     return sketch;
   }, []);
 

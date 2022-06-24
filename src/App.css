@@ -58,4 +58,5 @@ body {
   .char {
     cursor: pointer;
     font-size: 16vw;
+    user-select: none;
   }
