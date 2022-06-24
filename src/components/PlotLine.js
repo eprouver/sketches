@@ -2,7 +2,10 @@ export const PlotLine = ({ plotLine }) => {
   return (
     <div>
       <h2>Plot Line</h2>
-      <p>The flow of the story based on story archetypes.</p>
+      <p>
+        The flow of the story based on story archetypes. This determines if the
+        following plot beat selections are positive or negative.
+      </p>
       <h3>{plotLine.name}</h3>
       <div className="d-flex">
         <div

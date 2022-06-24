@@ -5,18 +5,13 @@ body {
   .plot-point {
     width: 2em;
     height: 2.3em;
-    font-size: 51px;
+    font-size: 5vw;
     background: white;
     border-top: 10px solid white;
     border-bottom: 10px solid white;
     position: relative;
-  }
-  
-  .plot-point:first-child {
-    border-left: 10px solid white;
-  }
-  .plot-point:last-child {
-    border-right: 10px solid white;
+    margin: 10px;
+    border: 10px solid white;
   }
   
   .upwards {
@@ -62,4 +57,5 @@ body {
 
   .char {
     cursor: pointer;
+    font-size: 16vw;
   }

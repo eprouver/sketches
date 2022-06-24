@@ -62,7 +62,7 @@ export const Characters = ({ chars, setChars }) => {
   return (
     <div>
       <h2>The Characters</h2>
-      <p>Click on each to choose the characters in the story.</p>
+      <p>Click on each square to reveal a character in the sketch.</p>
       <div className="d-flex">
         <div
           className="char card display-1 me-3 p-3 border-primary"

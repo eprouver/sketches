@@ -19,29 +19,55 @@ const App = () => {
     sketch.characters = ["❓", "❓", "❓"];
     sketch.plotLine = _.sample(plots);
     sketch.acts = [pickCard(), pickCard(), pickCard()];
-    sketch.frames = [{ diag: [] }];
+    sketch.frames = [];
     return sketch;
-  }, [0]);
+  }, []);
 
   const [chars, setChars] = useState(sketch.characters);
   const [frames, setFrames] = useState(sketch.frames);
+  const [finalMoral, setFinalMoral] = useState([
+    "Select The Moral",
+    "Select The Moral",
+  ]);
 
   return (
     <div className="container">
-      <h1 className="mt-3">
-        Sketches
-        {/* <button
-          className="btn btn-success float-end"
-          onClick={regenerate.bind(this)}
-        >
-          Regenerate
-        </button> */}
-      </h1>
-      <Moral moral={sketch.moral} />
-      <Characters chars={chars} setChars={setChars} />
-      <PlotLine plotLine={sketch.plotLine} />
-      <Acts acts={sketch.acts} plotLine={sketch.plotLine} />
-      <Frames frames={frames} setFrames={setFrames} chars={chars} />
+      <h1 className="mt-3">Sketches</h1>
+      <div className="my-5">
+        <Moral
+          moral={sketch.moral}
+          finalMoral={(index, message) => {
+            const copy = [...finalMoral];
+            copy[index] = message;
+            setFinalMoral(copy);
+          }}
+        />
+      </div>
+      <div className="my-5">
+        <Characters chars={chars} setChars={setChars} />
+      </div>
+      <div className="my-5">
+        <PlotLine plotLine={sketch.plotLine} />
+      </div>
+      <div className="my-5">
+        <Acts
+          acts={sketch.acts}
+          plotLine={sketch.plotLine}
+          finalMoral={finalMoral}
+        />
+      </div>
+      <div className="my-5">
+        <Frames frames={frames} setFrames={setFrames} chars={chars} />
+      </div>
+      <h2>In Summary</h2>
+      <p>
+        The sketch of {chars[0]}, {chars[1]}, and {chars[2]} illustrates
+        that&hellip;
+      </p>
+      <p>
+        <span className="text-primary">{finalMoral[0]}</span> is just like{" "}
+        <span className="text-primary">{finalMoral[1]}</span>
+      </p>
     </div>
   );
 };

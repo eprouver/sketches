@@ -1,7 +1,7 @@
 import { useState } from "react";
 const _ = require("lodash");
 
-export const Moral = ({ moral }) => {
+export const Moral = ({ moral, finalMoral }) => {
   const [message, setMessage] = useState(moral);
 
   const setMoral = (messageIndex, moralIndex) => {
@@ -13,32 +13,35 @@ export const Moral = ({ moral }) => {
     ];
     copy[moralIndex].meanings.shadow = [];
     setMessage(copy);
+    finalMoral(moralIndex, copy[moralIndex].meanings.light[0]);
   };
   return (
     <div>
       <h2>The Moral</h2>
       <p>
-        Select one item from each column. Tell a story about how{" "}
+        Select one item from each column. Tell a sketch about how{" "}
         <b>column one</b> is the same as <b>column two</b>.
       </p>
       <div className="row">
         {message.map((m, moralIndex) => {
           return (
-            <ul key={`list_${moralIndex}`} className="list-group col">
-              {m.meanings.light
-                .concat(m.meanings.shadow)
-                .map((message, messageIndex) => {
-                  return (
-                    <li
-                      key={`message_${messageIndex}_${moralIndex}`}
-                      className="list-group-item"
-                      onClick={setMoral.bind(this, messageIndex, moralIndex)}
-                    >
-                      {message}
-                    </li>
-                  );
-                })}
-            </ul>
+            <div className="col">
+              <ul key={`list_${moralIndex}`} className="list-group">
+                {m.meanings.light
+                  .concat(m.meanings.shadow)
+                  .map((message, messageIndex) => {
+                    return (
+                      <li
+                        key={`message_${messageIndex}_${moralIndex}`}
+                        className="list-group-item"
+                        onClick={setMoral.bind(this, messageIndex, moralIndex)}
+                      >
+                        {message}
+                      </li>
+                    );
+                  })}
+              </ul>
+            </div>
           );
         })}
       </div>
