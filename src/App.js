@@ -33,7 +33,7 @@ const App = () => {
   ]);
 
   return (
-    <div className="container">
+    <div className="container-fluid">
       <h1 className="mt-3">Sketches</h1>
       <div className="my-5">
         <Moral

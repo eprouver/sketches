@@ -26,8 +26,8 @@ export const Acts = ({ acts, plotLine, finalMoral }) => {
       <div className="row">
         {message.map((m, plotIndex) => {
           return (
-            <div className="col">
-              <ul key={`list_${plotIndex}`} className="list-group">
+            <div key={`list_${plotIndex}`} className="col">
+              <ul className="list-group">
                 {m.meanings[
                   plotLine.orientations[plotIndex] ? "shadow" : "light"
                 ].map((message, messageIndex) => {

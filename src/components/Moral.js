@@ -25,8 +25,8 @@ export const Moral = ({ moral, finalMoral }) => {
       <div className="row">
         {message.map((m, moralIndex) => {
           return (
-            <div className="col">
-              <ul key={`list_${moralIndex}`} className="list-group">
+            <div key={`list_${moralIndex}`} className="col">
+              <ul className="list-group">
                 {m.meanings.light
                   .concat(m.meanings.shadow)
                   .map((message, messageIndex) => {

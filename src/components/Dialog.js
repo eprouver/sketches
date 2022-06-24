@@ -49,6 +49,7 @@ export const Dialog = ({ chars, diag, removeDialog, updateDiag }) => {
           <option value="🤯">🤯</option>
           <option value="😍">😍</option>
           <option value="🤨">🤨</option>
+          <option value="🥺">🥺</option>
           <option value="💭">💭</option>
         </select>
       </div>
