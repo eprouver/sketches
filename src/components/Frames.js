@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Frame } from "./Frame";
-const _ = require("lodash");
 
 export const Frames = ({ frames, setFrames, chars }) => {
+  const [english, setEnglish] = useState(true);
   const removeFrame = (index) => {
     const ask = window.confirm("Are you sure?");
 
@@ -26,7 +27,18 @@ export const Frames = ({ frames, setFrames, chars }) => {
 
   return (
     <div>
-      <h2>Frames</h2>
+      <h2>
+        Frames
+        <button
+          className="btn btn-success float-end"
+          onClick={() => {
+            const swap = !english;
+            setEnglish(swap);
+          }}
+        >
+          Toggle Language
+        </button>
+      </h2>
       <p>
         Add character dialog for each frame. Use 🖼️ if you want to explain what
         will be in the image.
@@ -38,6 +50,7 @@ export const Frames = ({ frames, setFrames, chars }) => {
               <Frame
                 chars={chars}
                 frame={frame}
+                english={english}
                 updateFrame={(frame) => {
                   updateFrame(frame, i);
                 }}
@@ -56,12 +69,12 @@ export const Frames = ({ frames, setFrames, chars }) => {
         <div className="col-6 mb-5">
           <div className="frame d-flex">
             <div
-              className="display-1 w-100 text-center align-self-center"
+              className="display-3 w-100 text-center align-self-center cursor-pointer"
               onClick={() => {
                 addFrame();
               }}
             >
-              +
+              + Add Frame
             </div>
           </div>
         </div>

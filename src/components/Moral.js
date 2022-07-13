@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "animate.css";
 const _ = require("lodash");
 
 export const Moral = ({ moral, finalMoral }) => {
@@ -25,7 +26,10 @@ export const Moral = ({ moral, finalMoral }) => {
       <div className="row">
         {message.map((m, moralIndex) => {
           return (
-            <div key={`list_${moralIndex}`} className="col">
+            <div
+              key={`list_${moralIndex}`}
+              className="col animate__animated animate__zoomIn"
+            >
               <ul className="list-group">
                 {m.meanings.light
                   .concat(m.meanings.shadow)
