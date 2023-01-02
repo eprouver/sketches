@@ -27,18 +27,7 @@ export const Frames = ({ frames, setFrames, chars }) => {
 
   return (
     <div>
-      <h2>
-        Frames
-        <button
-          className="btn btn-success float-end"
-          onClick={() => {
-            const swap = !english;
-            setEnglish(swap);
-          }}
-        >
-          Toggle Language
-        </button>
-      </h2>
+      <h2>Translation Frames</h2>
       <p>
         Add character dialog for each frame. Use 🖼️ if you want to explain what
         will be in the image.
@@ -46,27 +35,39 @@ export const Frames = ({ frames, setFrames, chars }) => {
       <div className="row">
         {frames.map((frame, i) => {
           return (
-            <div key={`frame_${i}`} className="col-6 mb-2">
-              <Frame
-                chars={chars}
-                frame={frame}
-                english={english}
-                updateFrame={(frame) => {
-                  updateFrame(frame, i);
-                }}
-              />
-              <button
-                className="btn btn-danger float-end"
-                onClick={() => {
-                  removeFrame(i);
-                }}
-              >
-                &times;
-              </button>
-            </div>
+            <>
+              <div key={`frame_${i}_eng`} className="col-6 mb-2">
+                <Frame
+                  chars={chars}
+                  frame={frame}
+                  english={english}
+                  updateFrame={(frame) => {
+                    updateFrame(frame, i);
+                  }}
+                />
+              </div>
+              <div key={`frame_${i}_notEng`} className="col-6 mb-2">
+                <Frame
+                  chars={chars}
+                  frame={frame}
+                  english={!english}
+                  updateFrame={(frame) => {
+                    updateFrame(frame, i);
+                  }}
+                />
+                <button
+                  className="btn btn-danger float-end"
+                  onClick={() => {
+                    removeFrame(i);
+                  }}
+                >
+                  &times;
+                </button>
+              </div>
+            </>
           );
         })}
-        <div className="col-6 mb-5">
+        <div className="col-12 mb-5">
           <div className="frame d-flex">
             <div
               className="display-3 w-100 text-center align-self-center cursor-pointer"

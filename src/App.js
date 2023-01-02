@@ -56,20 +56,12 @@ const App = () => {
           acts={sketch.acts}
           plotLine={sketch.plotLine}
           finalMoral={finalMoral}
+          chars={chars}
         />
       </div>
       <div className="my-5">
         <Frames frames={frames} setFrames={setFrames} chars={chars} />
       </div>
-      <h2>In Summary</h2>
-      <p>
-        The sketch of {chars[0]}, {chars[1]}, and {chars[2]} illustrates
-        that&hellip;
-      </p>
-      <p>
-        <span className="text-primary">{finalMoral[0]}</span> is just like{" "}
-        <span className="text-primary">{finalMoral[1]}</span>
-      </p>
     </div>
   );
 };

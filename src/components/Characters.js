@@ -25,29 +25,7 @@ const randomCharacter = () => {
     "👨🏾‍🚒",
     "👩🏽‍🎓",
     "👩🏼‍🏭",
-    "🧚🏽‍♂️",
     "🕵🏻‍♂️",
-    "🐵",
-    "🦊",
-    "🐶",
-    "🐱",
-    "🦁",
-    "🐴",
-    "🦄",
-    "🐮",
-    "🐷",
-    "🐭",
-    "🐰",
-    "🐻",
-    "🐧",
-    "🐸",
-    "🐲",
-    "🐟",
-    "🐝",
-    "🦋",
-    "🪨",
-    "⭐",
-    "🌵",
   ];
 
   const sample = (arr) => {
@@ -80,6 +58,37 @@ export const Characters = ({ chars, setChars }) => {
     setChars(copy);
   };
 
+  const updateNonHumanChar = (index) => {
+    const nonHuman = [
+      "🧚🏽‍♂️",
+      "🐵",
+      "🦊",
+      "🐶",
+      "🐱",
+      "🦁",
+      "🐴",
+      "🦄",
+      "🐮",
+      "🐷",
+      "🐭",
+      "🐰",
+      "🐻",
+      "🐧",
+      "🐸",
+      "🐲",
+      "🐟",
+      "🐝",
+      "🦋",
+      "🪨",
+      "⭐",
+      "🌵",
+    ];
+
+    const copy = chars.slice(0);
+    copy[index] = nonHuman[~~(Math.random() * nonHuman.length)];
+    setChars(copy);
+  };
+
   return (
     <div>
       <h2>The Characters</h2>
@@ -99,7 +108,7 @@ export const Characters = ({ chars, setChars }) => {
         </div>
         <div
           className="char card display-1 me-3 p-3 border-secondary"
-          onClick={updateChar.bind(this, 2)}
+          onClick={updateNonHumanChar.bind(this, 2)}
         >
           {chars[2]}
         </div>

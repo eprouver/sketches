@@ -46,7 +46,6 @@ export const Dialog = ({ chars, diag, removeDialog, updateDiag, english }) => {
           <option value="😡">😡</option>
           <option value="🤮">🤮</option>
           <option value="🥱">🥱</option>
-          <option value="😡">😡</option>
           <option value="🤪">🤪</option>
           <option value="🤯">🤯</option>
           <option value="😍">😍</option>
@@ -71,7 +70,6 @@ export const Dialog = ({ chars, diag, removeDialog, updateDiag, english }) => {
         } ${english ? "d-none" : ""}`}
         ref={myToki}
         value={diag.toki}
-        placeholder={diag.text}
         onChange={handleChange}
       ></textarea>
 
