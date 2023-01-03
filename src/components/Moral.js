@@ -18,10 +18,10 @@ export const Moral = ({ moral, finalMoral }) => {
   };
   return (
     <div>
-      <h2>The Moral</h2>
+      <h2>The Meaning of the Scene</h2>
       <p>
-        Select one item from each column. Tell a sketch about how{" "}
-        <b>column one</b> is the same as <b>column two</b>.
+        Select one item from each column. The scene will talk about how{" "}
+        <b>column one</b> is related to <b>column two</b>.
       </p>
       <div className="row">
         {message.map((m, moralIndex) => {
@@ -30,17 +30,17 @@ export const Moral = ({ moral, finalMoral }) => {
               key={`list_${moralIndex}`}
               className="col animate__animated animate__zoomIn"
             >
-              <ul className="list-group">
+              <ul className="list-group shadow">
                 {m.meanings.light
                   .concat(m.meanings.shadow)
-                  .map((message, messageIndex) => {
+                  .map((message, messageIndex, arr) => {
                     return (
                       <li
                         key={`message_${messageIndex}_${moralIndex}`}
                         className="list-group-item"
                         onClick={setMoral.bind(this, messageIndex, moralIndex)}
                       >
-                        {message}
+                        {arr.length > 1 ? `${messageIndex + 1}:` : ""} {message}
                       </li>
                     );
                   })}

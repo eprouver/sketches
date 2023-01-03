@@ -87,7 +87,6 @@ export const places = [
   "food truck",
   "gastropub",
   "juice bar",
-  "Peruvian",
   "pie shop",
   "steakhouse",
   "tea room",
@@ -97,7 +96,6 @@ export const places = [
   "brewery",
   "Champagne bar",
   "dive bar",
-  "gay bar",
   "hookah bar",
   "hotel bar",
   "lounge",
@@ -107,7 +105,6 @@ export const places = [
   "sake bar",
   "speakeasy",
   "sports bar",
-  "strip club",
   "whisky bar",
   "wine bar",
   "bath house",
@@ -132,15 +129,12 @@ export const places = [
   "lighthouse",
   "mountain",
   "national park",
-  "preserve",
-  "other outdoors",
   "palace",
   "park",
   "pedestrian street/plaza",
   "playground",
   "plaza",
   "pool",
-  "rafting",
   "recreation center",
   "river",
   "rock climbing",
@@ -180,10 +174,7 @@ export const places = [
   "housing development",
   "trailer park",
   "ATM",
-  "adult boutique",
-  "antiques",
   "auto garage",
-  "automotive",
   "baby store",
   "bank",
   "betting shop",
@@ -224,16 +215,12 @@ export const places = [
   "gift shop",
   "gun shop",
   "hardware store",
-  "health & beauty",
   "herbs & spices store",
   "hobby store",
   "hunting supply store",
   "Internet cafe",
   "jewelry store",
   "laundromat",
-  "laundry",
-  "lawyer",
-  "locksmith",
   "lottery kiosk",
   "luggage store",
   "mall",
@@ -248,7 +235,6 @@ export const places = [
   "nail salon",
   "newsstand",
   "outlet store",
-  "office supplies",
   "pawn shop",
   "perfume shop",
   "pet store",
@@ -261,7 +247,6 @@ export const places = [
   "recording studio",
   "recycling center",
   "salon / barbershop",
-  "shipping store",
   "shoe repair",
   "smoke shop",
   "smoothie shop",
@@ -273,26 +258,22 @@ export const places = [
   "tailor",
   "tanning salon",
   "tattoo parlor",
-  "thrift / vintage",
-  "toys & games",
+  "thrift / vintage store",
   "travel agency",
   "used bookstore",
   "video store",
-  "warehouse store",
   "watch repair shop",
-  "bike",
   "boat / ferry",
   "border crossing",
   "bus stop",
   "cable car",
   "travel",
   "intersection",
-  "light rail",
-  "moving target",
+  "light rail station",
   "pier",
   "RV park",
   "rental car",
-  "rest areas",
+  "rest area",
   "road",
   "street",
   "subway",
@@ -304,4 +285,220 @@ export const places = [
   "tram station",
   "lounge",
   "tunnel",
+];
+
+export const nonHumanRelations = [
+  "aquaintances",
+  "friends",
+  "enemies",
+  "work friends",
+  "students",
+  "working together",
+  "living together",
+  "strangers",
+];
+
+export const humanRelations = [
+  "aquaintances",
+  "relatives",
+  "married",
+  "colleagues",
+  "enemies",
+  "exes",
+  "family",
+  "lovers",
+  "work friends",
+  "students",
+  "coworkers",
+  "working together",
+  "living together",
+  "on a first date",
+  "divorced",
+  "strangers",
+  "friends",
+];
+
+export const humanCharacters = [
+  {
+    emoji: "🧟‍♂️",
+    name: "Zombie",
+  },
+  {
+    emoji: "🦹🏽‍♂️",
+    name: "Super Villian",
+  },
+  {
+    emoji: "🦸🏽‍♂️",
+    name: "Super Hero",
+  },
+  {
+    emoji: "🧛🏽‍♂️",
+    name: "Vampire",
+  },
+  {
+    emoji: "👷🏻‍♂️",
+    name: "Construction Worker",
+  },
+  {
+    emoji: "👨🏽‍🎨",
+    name: "Artist",
+  },
+  {
+    emoji: "👨🏿‍💼",
+    name: "Office Worker",
+  },
+  {
+    emoji: "👨🏻‍🔧",
+    name: "Mechanic",
+  },
+  {
+    emoji: "👨🏾‍⚕️",
+    name: "Doctor",
+  },
+  {
+    emoji: "👨🏼‍🌾",
+    name: "Farmer",
+  },
+  {
+    emoji: "👨🏽‍⚖️",
+    name: "Judge",
+  },
+  {
+    emoji: "👨🏾‍🔬",
+    name: "Scientist",
+  },
+  {
+    emoji: "👨🏼‍🎤",
+    name: "Rock Star",
+  },
+  {
+    emoji: "👨🏽‍🚀",
+    name: "Astronaut",
+  },
+  {
+    emoji: "👮🏽‍♂️",
+    name: "Police Officer",
+  },
+  {
+    emoji: "👩🏽‍🍳",
+    name: "Chef",
+  },
+  {
+    emoji: "💂🏽‍♂️",
+    name: "Guard",
+  },
+  {
+    emoji: "🧙🏼‍♂️",
+    name: "Sorcerer",
+  },
+  {
+    emoji: "👰🏻‍♂️",
+    name: "Bride",
+  },
+  {
+    emoji: "👩🏼‍✈️",
+    name: "Pilot",
+  },
+  {
+    emoji: "🧝🏽‍♂️",
+    name: "Elf",
+  },
+  {
+    emoji: "👨🏾‍🚒",
+    name: "Firefighter",
+  },
+  {
+    emoji: "👩🏽‍🎓",
+    name: "Student",
+  },
+  {
+    emoji: "👩🏼‍🏭",
+    name: "Welder",
+  },
+  {
+    emoji: "🕵🏻‍♂️",
+    name: "Detective",
+  },
+];
+export const nonHumanCharacters = [
+  {
+    emoji: "🧚🏽‍♂️",
+    name: "Pixie",
+  },
+  {
+    emoji: "🐵",
+    name: "Monkey",
+  },
+  {
+    emoji: "🦊",
+    name: "Fox",
+  },
+  {
+    emoji: "🐶",
+    name: "Dog",
+  },
+  {
+    emoji: "🐱",
+    name: "Cat",
+  },
+  {
+    emoji: "🦁",
+    name: "Lion",
+  },
+  {
+    emoji: "🐴",
+    name: "Horse",
+  },
+  {
+    emoji: "🦄",
+    name: "Unicorn",
+  },
+  {
+    emoji: "🐮",
+    name: "Cow",
+  },
+  {
+    emoji: "🐷",
+    name: "Pig",
+  },
+  {
+    emoji: "🐭",
+    name: "Mouse",
+  },
+  {
+    emoji: "🐰",
+    name: "Rabbit",
+  },
+  {
+    emoji: "🐻",
+    name: "Bear",
+  },
+  {
+    emoji: "🐧",
+    name: "Penguin",
+  },
+  {
+    emoji: "🐸",
+    name: "Frog",
+  },
+  {
+    emoji: "🐲",
+    name: "Dragon",
+  },
+  {
+    emoji: "🐟",
+    name: "Fish",
+  },
+  {
+    emoji: "🐝",
+    name: "Bee",
+  },
+  {
+    emoji: "🦋",
+    name: "Butterfly",
+  },
+  {
+    emoji: "⭐",
+    name: "Star",
+  },
 ];

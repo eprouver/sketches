@@ -2368,5 +2368,5 @@ const tarot = {
 };
 
 export const pickCard = () => {
-  return _.sample(tarot.cards);
+  return structuredClone(_.sample(tarot.cards));
 };

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Frame } from "./Frame";
 
-export const Frames = ({ frames, setFrames, chars }) => {
-  const [english, setEnglish] = useState(true);
+export const Frames = ({ frames, setFrames, chars, location }) => {
+  const [translate, setTranslate] = useState(0);
   const removeFrame = (index) => {
     const ask = window.confirm("Are you sure?");
 
@@ -27,56 +27,97 @@ export const Frames = ({ frames, setFrames, chars }) => {
 
   return (
     <div>
-      <h2>Translation Frames</h2>
-      <p>
-        Add character dialog for each frame. Use 🖼️ if you want to explain what
-        will be in the image.
-      </p>
-      <div className="row">
-        {frames.map((frame, i) => {
-          return (
-            <>
-              <div key={`frame_${i}_eng`} className="col-6 mb-2">
-                <Frame
-                  chars={chars}
-                  frame={frame}
-                  english={english}
-                  updateFrame={(frame) => {
-                    updateFrame(frame, i);
-                  }}
-                />
-              </div>
-              <div key={`frame_${i}_notEng`} className="col-6 mb-2">
-                <Frame
-                  chars={chars}
-                  frame={frame}
-                  english={!english}
-                  updateFrame={(frame) => {
-                    updateFrame(frame, i);
-                  }}
-                />
-                <button
-                  className="btn btn-danger float-end"
-                  onClick={() => {
-                    removeFrame(i);
-                  }}
-                >
-                  &times;
-                </button>
-              </div>
-            </>
-          );
-        })}
-        <div className="col-12 mb-5">
-          <div className="frame d-flex">
-            <div
-              className="display-3 w-100 text-center align-self-center cursor-pointer"
-              onClick={() => {
-                addFrame();
-              }}
-            >
-              + Add Frame
+      <div className="float-end">
+        <div className="text-center">
+          {[0, 1, 2].map((i) => {
+            return (
+              <span
+                key={`pip_${i}`}
+                className={`mx-2 ${
+                  translate === i ? "text-warning" : "text-secondary"
+                }`}
+              >
+                ●
+              </span>
+            );
+          })}
+        </div>
+        <button
+          className="btn btn-warning"
+          onClick={() => {
+            let copy = translate;
+            copy += 1;
+            if (copy >= 3) copy = 0;
+            setTranslate(copy);
+          }}
+        >
+          View: {["Original", "Rewrite", "Finished"][translate]}
+        </button>
+      </div>
+      <h2>Dialog Parts</h2>
+
+      <h3>
+        Location - <span className="text-capitalize">{location}</span>:
+      </h3>
+      {frames.map((frame, i) => {
+        return (
+          <div key={`frame_${i}_eng`} className="row">
+            <div className={`mb-2 ${["col-12", "col-6", "d-none"][translate]}`}>
+              <Frame
+                chars={chars}
+                frame={frame}
+                frameNum={i}
+                english={true}
+                translate={translate}
+                updateFrame={(frame) => {
+                  updateFrame(frame, i);
+                }}
+              />
+              <button
+                className={`btn btn-danger float-end ${
+                  translate === 0 ? "" : "d-none"
+                }`}
+                onClick={() => {
+                  removeFrame(i);
+                }}
+              >
+                &times;
+              </button>
             </div>
+            <div className={`mb-2 ${["d-none", "col-6", "col-12"][translate]}`}>
+              <Frame
+                chars={chars}
+                frame={frame}
+                frameNum={i}
+                english={false}
+                translate={translate}
+                updateFrame={(frame) => {
+                  updateFrame(frame, i);
+                }}
+              />
+              <button
+                className={`btn btn-danger float-end ${
+                  translate === 1 ? "" : "d-none"
+                }`}
+                onClick={() => {
+                  removeFrame(i);
+                }}
+              >
+                &times;
+              </button>
+            </div>
+          </div>
+        );
+      })}
+      <div className="col-12 mb-5">
+        <div className={`frame d-flex ${translate !== 2 ? "" : "d-none"}`}>
+          <div
+            className="display-3 w-100 text-center align-self-center cursor-pointer"
+            onClick={() => {
+              addFrame();
+            }}
+          >
+            + Add a Dialog Part
           </div>
         </div>
       </div>
